@@ -1,11 +1,15 @@
 package org.backend.spothunterserver.dto.user;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
-public record UserLoginRequest(
-        @NotBlank(message = "用户名不能为空") String username,
+@Getter
+@Setter
+public class UserLoginRequest {
+    @NotBlank(message = "用户名不能为空")
+    private String username;
 
-        @NotBlank(message = "密码不能为空") String password
-) {
+    @NotBlank(message = "密码不能为空")
+    private String password;
 }
-

@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,20 +29,39 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private Integer score = 0;
+    @Column(length = 64)
+    private String nickname;
 
-    @Column(name = "create_time", nullable = false)
+    @Column(length = 20)
+    private String phone;
+
+    @Column(length = 255)
+    private String avatar;
+
+    @Column(length = 255)
+    private String email;
+
+    @Column(nullable = false, length = 20)
+    private String role = "USER"; // USER, ADMIN
+
+    @Column(name = "create_time", nullable = false, updatable = false)
     private LocalDateTime createTime;
 
-    @Column
-    private String avatar;
+    @Column(name = "update_time")
+    private LocalDateTime updateTime;
 
     @PrePersist
     public void prePersist() {
+        LocalDateTime now = LocalDateTime.now();
         if (createTime == null) {
-            createTime = LocalDateTime.now();
+            createTime = now;
         }
+        updateTime = now;
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updateTime = LocalDateTime.now();
     }
 }
 

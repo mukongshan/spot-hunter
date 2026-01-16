@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler({IllegalArgumentException.class, IllegalStateException.class})
     public ResponseEntity<ApiResponse<Void>> handleIllegalState(RuntimeException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.fail(400, ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.fail(1002, ex.getMessage()));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -22,18 +22,19 @@ public class GlobalExceptionHandler {
                 .findFirst()
                 .map(error -> error.getField() + " " + error.getDefaultMessage())
                 .orElse("参数校验失败");
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.fail(400, message));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.fail(1002, message));
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<ApiResponse<Void>> handleConstraint(ConstraintViolationException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.fail(400, ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.fail(1002, ex.getMessage()));
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiResponse<Void>> handleOthers(Exception ex) {
+        ex.printStackTrace();
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(ApiResponse.fail(500, "服务器开小差了，请稍后再试"));
+                .body(ApiResponse.fail(5000, "服务器开小差了，请稍后再试"));
     }
 }
 
