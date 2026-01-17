@@ -62,8 +62,13 @@ public class UploadController {
             throw new RuntimeException("文件上传失败", e);
         }
 
-        // 构建响应
-        String url = urlPrefix + "/" + dateDir + "/" + filename;
+        // 构建响应 - 如果urlPrefix是相对路径，添加服务器地址
+        String url;
+        if (urlPrefix.startsWith("/")) {
+            url = "http://localhost:8080" + urlPrefix + "/" + dateDir + "/" + filename;
+        } else {
+            url = urlPrefix + "/" + dateDir + "/" + filename;
+        }
         ImageUploadResponse response = new ImageUploadResponse();
         response.setUrl(url);
         response.setFilename(filename);

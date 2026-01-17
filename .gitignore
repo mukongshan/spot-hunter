@@ -1,0 +1,135 @@
+# ===================== 通用 =====================
+# 操作系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE配置
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# 临时文件
+*.log
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# ===================== 前端 (Web) =====================
+# 依赖
+Web/node_modules/
+Web/.pnpm-store/
+
+# 构建输出
+Web/dist/
+Web/build/
+Web/.vite/
+Web/.nuxt/
+Web/.output/
+
+# 环境变量
+Web/.env
+Web/.env.local
+Web/.env.*.local
+Web/.env.production
+Web/.env.development
+
+# 编辑器
+Web/.idea/
+Web/.vscode/
+Web/*.suo
+Web/*.ntvs*
+Web/*.njsproj
+Web/*.sln
+Web/*.sw?
+
+# 日志
+Web/npm-debug.log*
+Web/yarn-debug.log*
+Web/yarn-error.log*
+Web/pnpm-debug.log*
+Web/lerna-debug.log*
+
+# ===================== 后端 (Server) =====================
+# Maven
+Server/**/target/
+Server/**/.mvn/
+Server/**/mvnw
+Server/**/mvnw.cmd
+
+# 编译输出
+Server/**/classes/
+Server/**/*.class
+Server/**/*.jar
+Server/**/*.war
+Server/**/*.ear
+Server/**/*.nar
+
+# 日志
+Server/**/logs/
+Server/**/*.log
+
+# Spring Boot
+Server/**/application-local.properties
+Server/**/application-local.yml
+Server/**/application-local.yaml
+
+# 上传的文件
+Server/**/uploads/
+Server/**/files/
+
+# 数据库
+Server/**/*.db
+Server/**/*.sqlite
+Server/**/*.sqlite3
+Server/**/hsqldb/
+Server/**/derby.log
+
+# H2数据库（如果使用）
+Server/**/*.mv.db
+Server/**/*.trace.db
+
+# ===================== 特定项目 =====================
+# 上传的图片和文件
+Server/SpotHunterServer/uploads/
+Server/SpotHunterServer/files/
+
+# 配置文件（包含敏感信息）
+# Server/**/application.properties  # 保留配置文件，但可以添加 local 版本
+Server/**/application-*.properties
+Server/**/application-*.yml
+Server/**/application-*.yaml
+
+# ===================== 其他 =====================
+# 测试覆盖率
+coverage/
+*.lcov
+.nyc_output/
+
+# 打包文件
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# 锁文件（根据团队约定保留或忽略）
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
