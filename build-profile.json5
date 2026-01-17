@@ -1,0 +1,153 @@
+{
+  app: {
+    signingConfigs: [
+      {
+        name: "default",
+        type: "HarmonyOS",
+        material: {
+          certpath: "C:\\Users\\lenovo\\.ohos\\config\\default_TouristAttraction_wssSqEzf4RtUmlxdmSPfOLfJLvt4HeKUGPQizMP6jTI=.cer",
+          keyAlias: "debugKey",
+          keyPassword: "0000001B31ABD071BF2F338AD87E31C181E52E54A8CB2867466CACDF6CE14D9A1D945D8EF30E7E980257CC",
+          profile: "C:\\Users\\lenovo\\.ohos\\config\\default_TouristAttraction_wssSqEzf4RtUmlxdmSPfOLfJLvt4HeKUGPQizMP6jTI=.p7b",
+          signAlg: "SHA256withECDSA",
+          storeFile: "C:\\Users\\lenovo\\.ohos\\config\\default_TouristAttraction_wssSqEzf4RtUmlxdmSPfOLfJLvt4HeKUGPQizMP6jTI=.p12",
+          storePassword: "0000001B16C0A434FF5C0776AA90F6671F86572673F8F250C03E3F038C6E93414F11E513C19F9E2E9F6CF7",
+        },
+      },
+    ],
+    products: [
+      {
+        name: "default",
+        signingConfig: "default",
+        targetSdkVersion: "5.0.3(15)",
+        compatibleSdkVersion: "5.0.3(15)",
+        runtimeOS: "HarmonyOS",
+        buildOption: {
+          strictMode: {
+            caseSensitiveCheck: true,
+            useNormalizedOHMUrl: true,
+          },
+        },
+      },
+    ],
+    buildModeSet: [
+      {
+        name: "debug",
+      },
+      {
+        name: "release",
+      },
+    ],
+    capabilities: [
+      {
+        bundleName: "com.atomicservice.6917594993960191535",
+        config: [
+          {
+            name: "Push Kit",
+            capability: "com.huawei.service.push.base_service",
+          },
+          {
+            name: "Device status detection",
+            capability: "com.huawei.service.device_security.device_verify",
+          },
+          {
+            name: "Map Kit",
+            capability: "com.huawei.service.mapkit",
+          },
+          {
+            name: "Safety Detect",
+            capability: "com.huawei.service.device_security.safety_detect",
+          },
+        ],
+      },
+    ],
+  },
+  modules: [
+    {
+      name: "phone",
+      srcPath: "./products/phone",
+      targets: [
+        {
+          name: "default",
+          applyToProducts: ["default"],
+        },
+      ],
+    },
+    {
+      name: "mine",
+      srcPath: "./features/mine",
+    },
+    {
+      name: "types",
+      srcPath: "./commons/types",
+      targets: [
+        {
+          name: "default",
+          applyToProducts: ["default"],
+        },
+      ],
+    },
+    {
+      name: "uicomponents",
+      srcPath: "./commons/uicomponents",
+      targets: [
+        {
+          name: "default",
+          applyToProducts: ["default"],
+        },
+      ],
+    },
+    {
+      name: "order",
+      srcPath: "./features/order",
+    },
+    {
+      name: "network",
+      srcPath: "./commons/network",
+      targets: [
+        {
+          name: "default",
+          applyToProducts: ["default"],
+        },
+      ],
+    },
+    {
+      name: "ticket",
+      srcPath: "./features/ticket",
+    },
+    {
+      name: "common",
+      srcPath: "./commons/common",
+      targets: [
+        {
+          name: "default",
+          applyToProducts: ["default"],
+        },
+      ],
+    },
+    {
+      name: "home",
+      srcPath: "./features/home",
+    },
+    {
+      name: "guide",
+      srcPath: "./features/guide",
+    },
+    {
+      name: "tourist_management",
+      srcPath: "./components/tourist_management",
+    },
+    {
+      name: "attraction_guide",
+      srcPath: "./components/attraction_guide",
+    },
+    {
+      name: "module_base",
+      srcPath: "./components/module_base",
+    },
+    {
+      name: "attraction_announcement",
+      srcPath: "./components/attraction_announcement",
+    },
+  ],
+}

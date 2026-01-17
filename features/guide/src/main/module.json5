@@ -1,0 +1,9 @@
+{
+  module: {
+    name: "guide",
+    type: "har",
+    description: "$string:guide_desc",
+    deviceTypes: ["phone", "tablet"],
+    installationFree: true,
+  },
+}
