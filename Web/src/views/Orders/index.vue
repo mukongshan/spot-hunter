@@ -46,6 +46,14 @@
             <span class="order-no">{{ row.orderNo }}</span>
           </template>
         </el-table-column>
+        <el-table-column label="下单用户" width="150">
+          <template #default="{ row }">
+            <div class="user-info">
+              <span class="nickname">{{ row.nickname || row.username || '未知用户' }}</span>
+              <span class="user-id"> (ID: {{ row.userId }})</span>
+            </div>
+          </template>
+        </el-table-column>
         <el-table-column prop="ticketName" label="购买项目" min-width="200" />
         <el-table-column prop="quantity" label="数量" width="80" align="center" />
         <el-table-column label="金额" width="120" align="right">
@@ -256,6 +264,20 @@ onMounted(() => {
   color: #007aff;
   font-weight: 500;
   letter-spacing: 0.3px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info .nickname {
+  font-weight: 500;
+}
+
+.user-info .user-id {
+  font-size: 12px;
+  color: #909399;
 }
 
 .amount {

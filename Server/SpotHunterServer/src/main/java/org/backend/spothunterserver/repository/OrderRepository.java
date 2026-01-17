@@ -15,6 +15,8 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     Optional<Order> findByOrderNo(String orderNo);
     
     Page<Order> findByUserId(Long userId, Pageable pageable);
+
+    Page<Order> findAll(Pageable pageable);
     
     @Query("SELECT o FROM Order o WHERE o.userId = :userId " +
            "AND (:status IS NULL OR o.status = :status) " +

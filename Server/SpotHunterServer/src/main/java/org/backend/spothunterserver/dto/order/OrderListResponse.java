@@ -21,6 +21,9 @@ public class OrderListResponse {
     public static class OrderItem {
         private Long orderId;
         private String orderNo;
+        private Long userId;
+        private String username;
+        private String nickname;
         private String status;
         private BigDecimal totalPrice;
         private BigDecimal payAmount;

@@ -133,3 +133,5 @@ coverage/
 # yarn.lock
 # pnpm-lock.yaml
 
+*.md
+
