@@ -1,0 +1,36 @@
+{
+  "routerMap": [
+    {
+      "name": "DebugTicket",
+      "pageSourceFile": "src/main/ets/pages/DebugTicket.ets",
+      "buildFunction": "DebugTicketBuilder",
+      "data": {
+        "description": "this is DebugTicket"
+      }
+    },
+    {
+      "name": "TicketDetail",
+      "pageSourceFile": "src/main/ets/pages/TicketDetail.ets",
+      "buildFunction": "TicketDetailBuilder",
+      "data": {
+        "description": "this is TicketDetail"
+      }
+    },
+    {
+      "name": "Tickets",
+      "pageSourceFile": "src/main/ets/pages/Tickets.ets",
+      "buildFunction": "TicketsBuilder",
+      "data": {
+        "description": "this is Tickets"
+      }
+    },
+    {
+      "name": "TicketReserve",
+      "pageSourceFile": "src/main/ets/pages/TicketReserve.ets",
+      "buildFunction": "TicketReserveBuilder",
+      "data": {
+        "description": "this is TicketReserve"
+      }
+    }
+  ]
+}
